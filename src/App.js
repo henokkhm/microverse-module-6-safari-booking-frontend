@@ -1,10 +1,11 @@
 import './App.css';
+import Login from './components/Login';
 
 function App() {
   return (
-    <>
-      <h1>Welcome to Safari-Booking App</h1>
-    </>
+    <div className="flex justify-center items-center h-screen">
+      <Login />
+    </div>
   );
 }
 

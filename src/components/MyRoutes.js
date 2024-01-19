@@ -9,11 +9,11 @@ const MyRoutes = () => useRoutes([
     children: [
       {
         index: true,
-        element: <>Freelancers</>,
+        element: <>Safaris</>,
       },
       {
         path: '/details/:id',
-        element: <>Freelancers</>,
+        element: <>Safaris</>,
       },
       {
         path: '/reserve',
@@ -24,12 +24,12 @@ const MyRoutes = () => useRoutes([
         element: <>My Reservation</>,
       },
       {
-        path: '/addfreelancer',
-        element: <>Add Freelancers</>,
+        path: '/addSafari',
+        element: <>Add Safaris</>,
       },
       {
-        path: '/deletefreelancer',
-        element: <>Delete Freelancers</>,
+        path: '/deleteSafari',
+        element: <>Delete Safaris</>,
       },
       {
         path: '/logout',

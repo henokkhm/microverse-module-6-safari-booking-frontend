@@ -1,11 +1,13 @@
-import './App.css';
-import Login from './components/Login';
+import { BrowserRouter } from 'react-router-dom';
+import MyRoutes from './components/MyRoutes';
 
 function App() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <Login />
-    </div>
+    <>
+      <BrowserRouter>
+        <MyRoutes />
+      </BrowserRouter>
+    </>
   );
 }
 

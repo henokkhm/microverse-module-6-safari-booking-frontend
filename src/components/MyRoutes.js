@@ -1,10 +1,11 @@
 import { useRoutes } from 'react-router-dom';
 import Login from './Login';
+import Layout from '../layout/Layout';
 
 const MyRoutes = () => useRoutes([
   {
     path: '/',
-    element: <>Layout</>,
+    element: <Layout />,
     children: [
       {
         index: true,
@@ -32,7 +33,7 @@ const MyRoutes = () => useRoutes([
       },
       {
         path: '/logout',
-        element: <div>Logout</div>,
+        element: <div>You are Logout from Safari</div>,
       },
       {
         path: '*',
@@ -42,7 +43,7 @@ const MyRoutes = () => useRoutes([
   },
   {
     path: '/signin',
-    element: <Login />,
+    element: <div className="flex justify-center item-center h-full"><Login /></div>,
   },
   {
     path: '/signup',

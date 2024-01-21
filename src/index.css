@@ -1,27 +1,57 @@
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
-}
+/* stylelint-disable  -- @layer*/
+@layer base {
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+      @apply placeholder-transparent w-full border-gray-300 rounded-lg shadow-sm focus:border-lime-200 focus:ring-lime-200;
+    }
+  
+    [type='checkbox'],
+    [type='radio'],
+    select {
+      @apply rounded;
+    }
+  }
+  
+  @layer components {
+    .float__lbl {
+      @apply absolute px-1 z-10 left-2 -top-[11px] text-sm font-bold text-lime-700
+        transition-all
+        peer-placeholder-shown:text-gray-500
+      peer-placeholder-shown:font-normal
+      peer-placeholder-shown:bg-transparent
+      peer-placeholder-shown:top-[9px]
+      peer-placeholder-shown:text-base
+      peer-focus:left-2
+      peer-focus:-top-[11px]
+      peer-focus:font-bold
+      peer-focus:text-sm
+      peer-focus:text-lime-700
+    }
+  
+    .link-cus-title {
+      @apply text-green-100 ml-1 font-bold hover:underline hover:border-lime-200
+      hover:ring-lime-200 focus:border-lime-200 outline-none
+    }
+  
+    .link-cus {
+      @apply tracking-wide font-normal text-center text-blue-900
+    }
+  }
+  

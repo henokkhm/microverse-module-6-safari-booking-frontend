@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
+import logo from '../assets/logo.png';
+import hamburgerIcon from '../assets/icons/hamburger.svg';
 import twitterIcon from '../assets/icons/socials/twitter.svg';
 import facebookIcon from '../assets/icons/socials/facebook.svg';
 import googlePlusIcon from '../assets/icons/socials/google-plus.svg';
@@ -11,11 +13,15 @@ function Sidebar() {
     <div>
       {/* Logo */}
       <div>
-        <NavLink to="/">Logo</NavLink>
+        <NavLink to="/">
+          <img className="w-52" src={logo} alt="SafariTrek Logo" />
+        </NavLink>
       </div>
 
       {/* Hamburger Menu */}
-      <button type="button">Hamburger Icon</button>
+      <button type="button">
+        <img src={hamburgerIcon} alt="hamburger menu icon" />
+      </button>
 
       {/* Navigation */}
       <nav>

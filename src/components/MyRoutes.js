@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
-import Login from './Login';
-import Layout from '../layout/Layout';
+import Layout from '../pages/layout/Layout';
+import LoginPage from '../pages/LoginPage';
 
 const MyRoutes = () => useRoutes([
   {
@@ -12,23 +12,23 @@ const MyRoutes = () => useRoutes([
         element: <>Safaris</>,
       },
       {
-        path: '/details/:id',
-        element: <>Safaris</>,
+        path: '/safari/:id',
+        element: <>Safari Details</>,
       },
       {
         path: '/reserve',
         element: <>Reserve</>,
       },
       {
-        path: '/myreservation',
-        element: <>My Reservation</>,
+        path: '/my-reservations',
+        element: <>My Reservations</>,
       },
       {
-        path: '/addSafari',
-        element: <>Add Safaris</>,
+        path: '/add-safari',
+        element: <>Add a Safari</>,
       },
       {
-        path: '/deleteSafari',
+        path: '/delete-safari',
         element: <>Delete Safaris</>,
       },
       {
@@ -43,7 +43,7 @@ const MyRoutes = () => useRoutes([
   },
   {
     path: '/signin',
-    element: <div className="flex justify-center item-center h-full mt-[10rem]"><Login /></div>,
+    element: <div className="flex justify-center item-center h-full mt-[10rem]"><LoginPage /></div>,
   },
   {
     path: '/signup',

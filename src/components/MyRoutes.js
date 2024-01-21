@@ -1,6 +1,14 @@
 import { useRoutes } from 'react-router-dom';
 import Layout from '../pages/layout/Layout';
-import LoginPage from '../pages/LoginPage';
+
+import Login from '../pages/Login';
+import SignUp from '../pages/SignUp';
+import Homepage from '../pages/Home';
+import SafariDetails from '../pages/SafariDetails';
+import Reserve from '../pages/Reserve';
+import MyReservations from '../pages/MyReservations';
+import AddSafari from '../pages/AddSafari';
+import DeleteSafaris from '../pages/DeleteSafaris';
 
 const MyRoutes = () => useRoutes([
   {
@@ -9,31 +17,27 @@ const MyRoutes = () => useRoutes([
     children: [
       {
         index: true,
-        element: <>Safaris</>,
+        element: <Homepage />,
       },
       {
         path: '/safari/:id',
-        element: <>Safari Details</>,
+        element: <SafariDetails />,
       },
       {
         path: '/reserve',
-        element: <>Reserve</>,
+        element: <Reserve />,
       },
       {
         path: '/my-reservations',
-        element: <>My Reservations</>,
+        element: <MyReservations />,
       },
       {
         path: '/add-safari',
-        element: <>Add a Safari</>,
+        element: <AddSafari />,
       },
       {
         path: '/delete-safari',
-        element: <>Delete Safaris</>,
-      },
-      {
-        path: '/logout',
-        element: <div>You are Logout from Safari</div>,
+        element: <DeleteSafaris />,
       },
       {
         path: '*',
@@ -43,11 +47,11 @@ const MyRoutes = () => useRoutes([
   },
   {
     path: '/signin',
-    element: <div className="flex justify-center item-center h-full mt-[10rem]"><LoginPage /></div>,
+    element: <div className="flex justify-center item-center h-full mt-[10rem]"><Login /></div>,
   },
   {
     path: '/signup',
-    element: <>Reservation or Signup </>,
+    element: <SignUp />,
   },
 ]);
 

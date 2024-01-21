@@ -1,6 +1,6 @@
 import LoginForm from '../components/LoginForm';
 
-function LoginPage() {
+function Login() {
   return (
     <div className="flex flex-col bg-[url('./assets/safari-a.jpg')] w-full bg-cover shadow-md items-center justify-center border-solid border p-4 sm:w-[600px]">
       <h2>Sign in to your Safari account</h2>
@@ -15,4 +15,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Login;

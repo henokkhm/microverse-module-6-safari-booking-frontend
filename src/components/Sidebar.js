@@ -1,5 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
+import twitterIcon from '../assets/icons/socials/twitter.svg';
+import facebookIcon from '../assets/icons/socials/facebook.svg';
+import googlePlusIcon from '../assets/icons/socials/google-plus.svg';
+import vimeoIcon from '../assets/icons/socials/vimeo.svg';
+import pinterestIcon from '../assets/icons/socials/pinterest.svg';
+
 function Sidebar() {
   return (
     <div>
@@ -37,11 +43,31 @@ function Sidebar() {
       {/* Social Media Links */}
       <section>
         <ul>
-          <li>twitter</li>
-          <li>fb</li>
-          <li>google+</li>
-          <li>vimeo</li>
-          <li>pintrest</li>
+          <li>
+            <a href="/">
+              <img src={twitterIcon} alt="twitter icon" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src={facebookIcon} alt="facebook icon" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src={googlePlusIcon} alt="google plus icon" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src={vimeoIcon} alt="vimeo icon" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src={pinterestIcon} alt="pinterest icon" />
+            </a>
+          </li>
         </ul>
       </section>
 

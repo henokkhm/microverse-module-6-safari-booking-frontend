@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import logo from '../assets/logo.png';
+import logoSmall from '../assets/logo-small.svg';
 import hamburgerIcon from '../assets/icons/hamburger.svg';
 import twitterIcon from '../assets/icons/socials/twitter.svg';
 import facebookIcon from '../assets/icons/socials/facebook.svg';
@@ -14,7 +14,7 @@ function Sidebar() {
       {/* Logo */}
       <div>
         <NavLink to="/">
-          <img className="w-52" src={logo} alt="SafariTrek Logo" />
+          <img className="w-52" src={logoSmall} alt="SafariTrek Logo" />
         </NavLink>
       </div>
 

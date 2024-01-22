@@ -140,7 +140,7 @@ GitHub pages
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Add application's styling]**
-- [ ] **[build a complete website with working navigation.]**
+- [ ] **[Build a complete website with working navigation.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -141,7 +141,6 @@ GitHub pages
 
 - [ ] **[Add application's styling]**
 - [ ] **[Build a complete website with working navigation.]**
-- [ ] **[Need a strong realation and friendly app]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

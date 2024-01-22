@@ -10,36 +10,52 @@ import pinterestIcon from '../assets/icons/socials/pinterest.svg';
 
 function Sidebar() {
   return (
-    <div>
+    <div className="fixed w-56 min-h-screen shadow-md bg-st-green-50 p-6 pr-0 flex flex-col gap-4">
       {/* Logo */}
-      <div>
+      <div className="pr-6">
         <NavLink to="/">
-          <img className="w-52" src={logoSmall} alt="SafariTrek Logo" />
+          <img className="w-48" src={logoSmall} alt="SafariTrek Logo" />
         </NavLink>
       </div>
 
       {/* Hamburger Menu */}
-      <button type="button">
+      <button
+        className="absolute right-[-20px] top-28 h-10 w-10 bg-white shadow-md border-2 border-st-green-50 rounded-full flex items-center justify-center hover:scale-105"
+        type="button"
+      >
         <img src={hamburgerIcon} alt="hamburger menu icon" />
       </button>
 
       {/* Navigation */}
-      <nav>
-        <ul>
+      <nav className="mt-16">
+        <ul className="flex flex-col gap-2">
           <li>
-            <NavLink to="/">Safaris</NavLink>
+            <NavLink
+              className="nav-link"
+              to="/"
+            >
+              Safaris
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/reserve">Reserve</NavLink>
+            <NavLink className="nav-link" to="/reserve">
+              Reserve
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/my-reservations">My Reservations</NavLink>
+            <NavLink className="nav-link" to="/my-reservations">
+              My Reservations
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/add-safari">Add Safari</NavLink>
+            <NavLink className="nav-link" to="/add-safari">
+              Add Safari
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/delete-safari">Delete Safari</NavLink>
+            <NavLink className="nav-link" to="/delete-safari">
+              Delete Safari
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -47,38 +63,54 @@ function Sidebar() {
       {/* Log out button */}
 
       {/* Social Media Links */}
-      <section>
-        <ul>
+      <section className="mt-auto">
+        <ul className="flex gap-3 items-center justify-center">
           <li>
             <a href="/">
-              <img src={twitterIcon} alt="twitter icon" />
+              <img
+                className="social-icon"
+                src={twitterIcon}
+                alt="twitter icon"
+              />
             </a>
           </li>
           <li>
             <a href="/">
-              <img src={facebookIcon} alt="facebook icon" />
+              <img
+                className="social-icon"
+                src={facebookIcon}
+                alt="facebook icon"
+              />
             </a>
           </li>
           <li>
             <a href="/">
-              <img src={googlePlusIcon} alt="google plus icon" />
+              <img
+                className="social-icon"
+                src={googlePlusIcon}
+                alt="google plus icon"
+              />
             </a>
           </li>
           <li>
             <a href="/">
-              <img src={vimeoIcon} alt="vimeo icon" />
+              <img className="social-icon" src={vimeoIcon} alt="vimeo icon" />
             </a>
           </li>
           <li>
             <a href="/">
-              <img src={pinterestIcon} alt="pinterest icon" />
+              <img
+                className="social-icon"
+                src={pinterestIcon}
+                alt="pinterest icon"
+              />
             </a>
           </li>
         </ul>
       </section>
 
       {/* Copyrights */}
-      <span>© 2024</span>
+      <p className="text-center text-sm uppercase">© 2024</p>
     </div>
   );
 }

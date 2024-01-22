@@ -53,5 +53,13 @@
     .link-cus {
       @apply tracking-wide font-normal text-center text-blue-900
     }
+
+    .social-icon {
+      @apply hover:scale-105 hover:rotate-12 duration-150
+    }
+
+    .nav-link {
+      @apply uppercase p-3 font-bold text-lg hover:bg-st-green-100 w-full inline-block
+    }
   }
   

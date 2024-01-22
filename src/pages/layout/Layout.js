@@ -5,9 +5,9 @@ const Layout = () => (
   <>
     <Sidebar />
 
-    <div className="xl:ml-64">
+    <main className="ml-96">
       <Outlet />
-    </div>
+    </main>
   </>
 );
 

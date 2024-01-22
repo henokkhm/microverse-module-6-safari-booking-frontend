@@ -61,5 +61,9 @@
     .nav-link {
       @apply uppercase p-3 font-bold text-lg hover:bg-st-green-100 w-full inline-block
     }
+
+    .nav-link.active {
+      @apply bg-st-green-400
+    }
   }
   

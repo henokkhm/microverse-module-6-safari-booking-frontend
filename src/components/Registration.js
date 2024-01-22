@@ -33,13 +33,12 @@ function Registration() {
     <div>
       <h1>Registration Page</h1>
       <form onSubmit={handleSubmit}>
-        {/* Add your registration form fields */}
         <input type="email" name="email" placeholder="Enter email" onChange={handleChange} />
         <input type="password" name="password" placeholder="Enter email" onChange={handleChange} />
         <input type="text" name="username" placeholder="Enter First name" onChange={handleChange} />
         <input type="text" name="username" placeholder="Enter Last name" onChange={handleChange} />
         <input type="number" name="username" placeholder="Enter Phone Number" onChange={handleChange} />
-        <input type="text" name="username" placeholder="Enter role" onChange={handleChange} />
+        <input type="number" name="username" placeholder="Enter role" onChange={handleChange} />
         <button type="submit">Register/Signup</button>
       </form>
     </div>

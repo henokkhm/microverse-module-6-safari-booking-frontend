@@ -12,11 +12,12 @@ import pinterestIcon from '../assets/icons/socials/pinterest.svg';
 import Overlay from './Overlay';
 
 import useWindowSize from '../hooks/useWindowSize';
-import useLoginStatus from '../hooks/authHelper';
+import useLoginStatus, { useSignOut } from '../hooks/authHelper';
 
 function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
   const { windowWidth } = useWindowSize();
   const isLoggedIn = useLoginStatus();
+  const handleSignOut = useSignOut();
 
   const handleSidebarClose = () => {
     if (sidebarMenuIsOpen) {
@@ -106,13 +107,13 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
+                  <button
+                    type="button"
                     className="nav-link"
-                    onClick={handleSidebarClose}
-                    to="/#"
+                    onClick={handleSignOut}
                   >
                     Sign Out
-                  </NavLink>
+                  </button>
                 </li>
               </>
             ) : (

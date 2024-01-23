@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 import Layout from '../pages/layout/Layout';
-
+import Registration from './Registration';
 import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import Homepage from '../pages/Home';
@@ -43,15 +43,19 @@ const MyRoutes = () => useRoutes([
         path: '*',
         element: <div>Page not found</div>,
       },
+      {
+        path: '/signin',
+        element: <Login />,
+      },
+      {
+        path: '/signup',
+        element: <SignUp />,
+      },
+      {
+        path: '/register',
+        element: <Registration />,
+      },
     ],
-  },
-  {
-    path: '/signin',
-    element: <div className="flex justify-center item-center h-full mt-[10rem]"><Login /></div>,
-  },
-  {
-    path: '/signup',
-    element: <SignUp />,
   },
 ]);
 

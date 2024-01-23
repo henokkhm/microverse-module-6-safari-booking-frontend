@@ -1,6 +1,14 @@
 import { useRoutes } from 'react-router-dom';
-import Login from './Login';
-import Layout from '../layout/Layout';
+import Layout from '../pages/layout/Layout';
+
+import Login from '../pages/Login';
+import SignUp from '../pages/SignUp';
+import Homepage from '../pages/Home';
+import SafariDetails from '../pages/SafariDetails';
+import Reserve from '../pages/Reserve';
+import MyReservations from '../pages/MyReservations';
+import AddSafari from '../pages/AddSafari';
+import DeleteSafaris from '../pages/DeleteSafaris';
 
 const MyRoutes = () => useRoutes([
   {
@@ -9,31 +17,27 @@ const MyRoutes = () => useRoutes([
     children: [
       {
         index: true,
-        element: <>Safaris</>,
+        element: <Homepage />,
       },
       {
-        path: '/details/:id',
-        element: <>Safaris</>,
+        path: '/safari/:id',
+        element: <SafariDetails />,
       },
       {
         path: '/reserve',
-        element: <>Reserve</>,
+        element: <Reserve />,
       },
       {
-        path: '/myreservation',
-        element: <>My Reservation</>,
+        path: '/my-reservations',
+        element: <MyReservations />,
       },
       {
-        path: '/addSafari',
-        element: <>Add Safaris</>,
+        path: '/add-safari',
+        element: <AddSafari />,
       },
       {
-        path: '/deleteSafari',
-        element: <>Delete Safaris</>,
-      },
-      {
-        path: '/logout',
-        element: <div>You are Logout from Safari</div>,
+        path: '/delete-safari',
+        element: <DeleteSafaris />,
       },
       {
         path: '*',
@@ -47,7 +51,7 @@ const MyRoutes = () => useRoutes([
   },
   {
     path: '/signup',
-    element: <>Reservation or Signup </>,
+    element: <SignUp />,
   },
 ]);
 

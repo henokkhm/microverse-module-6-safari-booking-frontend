@@ -8,7 +8,7 @@ function Login() {
       <LoginForm />
       <div className="link-cus">
         Don&apos;t have an account?
-        <a href="/#" className="link-cus-title">
+        <a href="/register" className="link-cus-title">
           Sign up
         </a>
       </div>

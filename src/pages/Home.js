@@ -1,17 +1,5 @@
-import useLoginStatus from '../hooks/authHelper';
-
 function Home() {
-  const isLoggedIn = useLoginStatus();
-  return (
-    <>
-      <div>Homepage</div>
-      {isLoggedIn ? (
-        <div>You are Logged In</div>
-      ) : (
-        <div>You Are Not Logged In</div>
-      )}
-    </>
-  );
+  return <div>Homepage</div>;
 }
 
 export default Home;

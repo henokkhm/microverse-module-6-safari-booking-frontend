@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from 'react-router-dom';
 
 const AddSafari = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -111,7 +111,6 @@ const AddSafari = () => {
               <button
                 className="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                 type="submit"
-                disabled={loading}
               >
                 Add Safari
               </button>

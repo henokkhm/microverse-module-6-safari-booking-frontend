@@ -9,6 +9,7 @@ import Reserve from '../pages/Reserve';
 import MyReservations from '../pages/MyReservations';
 import AddSafari from '../pages/AddSafari';
 import DeleteSafaris from '../pages/DeleteSafaris';
+import Restricted from './Restricted';
 
 const MyRoutes = () => useRoutes([
   {
@@ -33,7 +34,7 @@ const MyRoutes = () => useRoutes([
       },
       {
         path: '/add-safari',
-        element: <AddSafari />,
+        element: <Restricted><AddSafari /></Restricted>,
       },
       {
         path: '/delete-safari',

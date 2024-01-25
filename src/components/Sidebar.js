@@ -12,9 +12,12 @@ import pinterestIcon from '../assets/icons/socials/pinterest.svg';
 import Overlay from './Overlay';
 
 import useWindowSize from '../hooks/useWindowSize';
+import useLoginStatus, { useSignOut } from '../hooks/authHelper';
 
 function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
   const { windowWidth } = useWindowSize();
+  const isLoggedIn = useLoginStatus();
+  const handleSignOut = useSignOut();
 
   const handleSidebarClose = () => {
     if (sidebarMenuIsOpen) {
@@ -43,7 +46,9 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
         {/* Hamburger Menu */}
         {isMobileScreen && (
           <button
-            className={`${!sidebarMenuIsOpen && 'translate-x-2'} absolute right-[-20px] top-28 h-10 w-10 bg-white shadow-md border-2 border-st-green-50 rounded-full flex items-center justify-center hover:scale-105`}
+            className={`${
+              !sidebarMenuIsOpen && 'translate-x-2'
+            } absolute right-[-20px] top-28 h-10 w-10 bg-white shadow-md border-2 border-st-green-50 rounded-full flex items-center justify-center hover:scale-105`}
             type="button"
             onClick={toggleSidebarMenu}
           >
@@ -64,25 +69,75 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
               </NavLink>
             </li>
             <li>
-              <NavLink className="nav-link" onClick={handleSidebarClose} to="/reserve">
+              <NavLink
+                className="nav-link"
+                onClick={handleSidebarClose}
+                to="/reserve"
+              >
                 Reserve
               </NavLink>
             </li>
             <li>
-              <NavLink className="nav-link" onClick={handleSidebarClose} to="/my-reservations">
+              <NavLink
+                className="nav-link"
+                onClick={handleSidebarClose}
+                to="/my-reservations"
+              >
                 My Reservations
               </NavLink>
             </li>
-            <li>
-              <NavLink className="nav-link" onClick={handleSidebarClose} to="/add-safari">
-                Add Safari
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="nav-link" onClick={handleSidebarClose} to="/delete-safari">
-                Delete Safari
-              </NavLink>
-            </li>
+            {isLoggedIn ? (
+              <>
+                <li>
+                  <NavLink
+                    className="nav-link"
+                    onClick={handleSidebarClose}
+                    to="/add-safari"
+                  >
+                    Add Safari
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="nav-link"
+                    onClick={handleSidebarClose}
+                    to="/delete-safari"
+                  >
+                    Delete Safari
+                  </NavLink>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className="nav-link"
+                    onClick={handleSignOut}
+                  >
+                    Sign Out
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink
+                    className="nav-link"
+                    onClick={handleSidebarClose}
+                    to="/signin"
+                  >
+                    Sign In
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="nav-link"
+                    onClick={handleSidebarClose}
+                    to="/register"
+                  >
+                    Register
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
 

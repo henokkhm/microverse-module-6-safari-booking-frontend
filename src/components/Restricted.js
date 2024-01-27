@@ -15,9 +15,6 @@ const Restricted = ({ children }) => {
 
   return isLoggedIn === true ? (
     <>
-      <div className="relative top-24 text-red-500 z-10 text-lg text-right pr-6">
-        <Toaster />
-      </div>
       {children}
     </>
   ) : (

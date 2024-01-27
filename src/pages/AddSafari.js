@@ -1,16 +1,35 @@
-// import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { FaSpinner } from 'react-icons/fa';
+import { addSafari } from '../redux/slices/safarisSlice';
+import { loaded } from '../redux/slices/loaderSlice';
 import useImageUploader from '../hooks/useImageUploader';
 
 const AddSafari = () => {
-  // const navigate = useNavigate();
-  const { imageURL, handleImageChange } = useImageUploader();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [notSubmit, setNotSubmit] = useState(true);
+  const loading = useSelector((state) => state.loading);
+  const { imageURL, handleImageChange, resetImage } = useImageUploader();
+  useEffect(() => {
+    dispatch(loaded());
+  }, [dispatch]);
   const handleSubmit = (e) => {
     e.preventDefault();
+    setNotSubmit(false);
+    const newSafariProfile = new FormData(e.target);
+    newSafariProfile.forEach((value, key) => {
+      console.log(key, value);
+    });
+    dispatch(addSafari({ newSafariProfile, navigate }));
+    e.target.reset();
+    resetImage();
   };
   return (
     <>
       <form
-        className="w-full  mt-40 flex justify-center"
+        className="w-full pt-5 flex justify-center"
         onSubmit={handleSubmit}
       >
         <div className="lg:w-6/12 md:w-9/12 sm:w-full">
@@ -110,14 +129,18 @@ const AddSafari = () => {
               </label>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-10 mb-2 mt-4">
+          <div className="flex flex-wrap justify-center mx-10 mb-2 mt-4">
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-              <button
-                className="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                type="submit"
-              >
-                Add Safari
-              </button>
+              {(loading && !notSubmit) ? (<span className="text-black"><FaSpinner className="spinner" /></span>)
+                : (
+                  <button
+                    className="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="submit"
+                    disabled={loading}
+                  >
+                    Add Safari
+                  </button>
+                )}
             </div>
           </div>
         </div>

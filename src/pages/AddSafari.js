@@ -1,7 +1,9 @@
 // import { useNavigate } from 'react-router-dom';
+import useImageUploader from '../hooks/useImageUploader';
 
 const AddSafari = () => {
   // const navigate = useNavigate();
+  const { imageURL, handleImageChange } = useImageUploader();
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -33,6 +35,7 @@ const AddSafari = () => {
           </div>
           <div className="flex flex-wrap -mx-10 mb-2">
             <div className="w-full px-3">
+              {imageURL && <img src={imageURL} alt="Safari" />}
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="image"
@@ -46,6 +49,7 @@ const AddSafari = () => {
                   name="safari[img]"
                   accept="image/*"
                   multiple={false}
+                  onChange={handleImageChange}
                 />
               </label>
             </div>

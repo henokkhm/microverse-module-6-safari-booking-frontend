@@ -13,28 +13,18 @@ const useLoginStatus = () => {
   return isLoggedIn;
 };
 
-export const useSignOut = () => {
-  const navigate = useNavigate();
-  const handleSignOut = () => {
-    fetch(`${BaseUrl}/api/auth/logout`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': '*/*',
-        Authorization: localStorage.getItem('token'),
-      },
+const handleSignOut = async () => {
+  await axios.delete(`${BaseUrl}api/auth/logout`, { headers: { Authorization: token } })
+    .then(() => {
+      localStorage.clear();
     })
-      .then(() => {
-        localStorage.clear();
-      })
-      .then(() => {
-        window.location.reload();
-        navigate('/');
-      })
-      .catch((err) => {
-        throw new Error(err);
-      });
-  };
-  return handleSignOut;
+    .then(() => {
+      window.location.reload();
+      navigate('/');
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 };
 
 export default useLoginStatus;

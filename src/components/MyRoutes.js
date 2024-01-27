@@ -30,7 +30,7 @@ const MyRoutes = () => useRoutes([
       },
       {
         path: '/my-reservations',
-        element: <MyReservations />,
+        element: <Restricted><MyReservations /></Restricted>,
       },
       {
         path: '/add-safari',

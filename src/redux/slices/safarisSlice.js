@@ -1,7 +1,7 @@
 // safarisSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import BaseUrl, { HEADERS } from '../../api/api_helper';
+import BaseUrl, { getHeaders } from '../../api/api_helper';
 import showMessage, { showError } from '../../helpers';
 import { loading, loaded } from './loaderSlice';
 
@@ -10,7 +10,7 @@ const initialState = [];
 export const getSafaris = createAsyncThunk('safaris/getSafaris', async (_, { dispatch }) => {
   dispatch(loading());
   try {
-    const response = await axios.get(`${BaseUrl}safaris`, HEADERS);
+    const response = await axios.get(`${BaseUrl}safaris`, getHeaders());
     dispatch(loaded());
     return response.data;
   } catch (error) {
@@ -23,7 +23,8 @@ export const getSafaris = createAsyncThunk('safaris/getSafaris', async (_, { dis
 export const addSafari = createAsyncThunk('safaris/addSafari', async (formData, { dispatch }) => {
   dispatch(loading());
   try {
-    const response = await axios.post(`${BaseUrl}safaris`, formData, HEADERS);
+    const headers = getHeaders();
+    const response = await axios.post(`${BaseUrl}safaris`, formData, { headers });
     dispatch(getSafaris());
     showMessage('safari added successfully');
     dispatch(loaded());

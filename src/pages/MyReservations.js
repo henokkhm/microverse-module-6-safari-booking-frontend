@@ -1,26 +1,30 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaRegSadTear } from 'react-icons/fa';
 import MyReservation from '../components/MyReservation';
+import { getReservations } from '../redux/slices/reservationSlice';
 
 const MyReservations = () => {
-  const loading = false;
-  const reservationList = [
-    { id: 1, name: 'any', date: 'date' },
-    { id: 1, name: 'any', date: 'date' },
-    { id: 1, name: 'any', date: 'date' },
-  ];
+  const dispatch = useDispatch();
+  const reservations = useSelector((state) => state.reservations);
+  const loading = useSelector((state) => state.loading);
+
+  useEffect(() => {
+    dispatch(getReservations());
+  }, [dispatch]);
 
   return (
     <>
       <div className="flex flex-col justify-center h-screen w-full md:w-11/12 mx-auto ">
         {loading && <span>...loading</span>}
-        {reservationList.length === 0 ? (
+        {reservations.length === 0 ? (
           <div className="flex justify-center font-bold  text-6xl text-clrPrime">
             No Record Found!
             <FaRegSadTear className="spinner" />
           </div>
         ) : (
-          reservationList.map((reservation) => (
-            <MyReservation key={reservation.id} id={reservation.id} />
+          reservations.map((reservation) => (
+            <MyReservation key={reservation.id} reservation={reservation} />
           ))
         )}
       </div>

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import BaseUrl from '../../api/api_helper';
+import BaseUrl, { HEADERS } from '../../api/api_helper';
 import { showError } from '../../helpers';
 import { loading, loaded } from './loaderSlice';
 
@@ -9,7 +9,7 @@ const initialState = [];
 export const getReservations = createAsyncThunk('reservations/getReservations', async (_, { dispatch }) => {
   dispatch(loading());
   try {
-    const response = await axios.get(`${BaseUrl}reservations`, { headers: { Authorization: localStorage.getItem('token') } });
+    const response = await axios.get(`${BaseUrl}reservations`, HEADERS);
     dispatch(loaded());
     return response.data;
   } catch (error) {

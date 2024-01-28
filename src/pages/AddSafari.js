@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaSpinner } from 'react-icons/fa';
 import { addSafari } from '../redux/slices/safarisSlice';
@@ -7,7 +6,6 @@ import { loaded } from '../redux/slices/loaderSlice';
 import useImageUploader from '../hooks/useImageUploader';
 
 const AddSafari = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [notSubmit, setNotSubmit] = useState(true);
   const loading = useSelector((state) => state.loading);
@@ -22,7 +20,7 @@ const AddSafari = () => {
     newSafariProfile.forEach((value, key) => {
       console.log(key, value);
     });
-    dispatch(addSafari({ newSafariProfile, navigate }));
+    dispatch(addSafari(newSafariProfile));
     e.target.reset();
     resetImage();
   };

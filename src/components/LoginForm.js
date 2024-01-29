@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import BaseUrl from '../api/api_helper';
 import NovaFormInput from './shared/NovaFormInput ';
 
 const LoginForm = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,13 +13,16 @@ const LoginForm = () => {
       const token = response.headers.authorization;
       if (token && token !== '') {
         localStorage.setItem('token', token);
-        console.log(token);
+      }
+
+      if (location.pathname === '/signin') {
         navigate('/');
+      } else {
+        navigate(location.pathname);
       }
     }).catch((err) => {
       document.getElementById('msg').textContent = `${err.response ? err.response.data : err.message}!`;
     });
-    console.log(loginData);
     e.target.reset();
   };
 

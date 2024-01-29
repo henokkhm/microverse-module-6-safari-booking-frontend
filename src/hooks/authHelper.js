@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import BaseUrl from '../api/api_helper';
 
@@ -15,14 +16,9 @@ const useLoginStatus = () => {
 
 export const useSignOut = () => {
   const navigate = useNavigate();
-  const handleSignOut = () => {
-    fetch(`${BaseUrl}/api/auth/logout`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': '*/*',
-        Authorization: localStorage.getItem('token'),
-      },
-    })
+  const token = localStorage.getItem('token');
+  const handleSignOut = async () => {
+    await axios.delete(`${BaseUrl}api/auth/logout`, { headers: { Authorization: token } })
       .then(() => {
         localStorage.clear();
       })

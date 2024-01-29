@@ -20,13 +20,29 @@ export const getReservations = createAsyncThunk('reservations/getReservations', 
   }
 });
 
+export const cancelReservation = createAsyncThunk('reservations/cancelReservation', async (id, { dispatch }) => {
+  dispatch(loading());
+  try {
+    const headers = getHeaders();
+    await axios.delete(`${BaseUrl}reservations/${id}`, headers);
+    dispatch(loaded());
+    return id;
+  } catch (error) {
+    showError();
+    dispatch(loaded());
+    throw error;
+  }
+});
+
 const reservationSlice = createSlice({
   name: 'reservations',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getReservations.fulfilled, (state, action) => action.payload);
+      .addCase(getReservations.fulfilled, (state, action) => action.payload)
+      .addCase(cancelReservation.fulfilled, (state, action) => (
+        state.filter((reservation) => reservation.id !== action.payload)));
   },
 });
 

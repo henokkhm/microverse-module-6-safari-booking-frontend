@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { cancelReservation } from '../redux/slices/reservationSlice';
 import Column from './shared/Column';
 import defaultImage from '../assets/safari-a.jpg';
 
 const MyReservation = ({ reservation }) => {
+  const dispatch = useDispatch();
   const {
     // eslint-disable-next-line camelcase
     bookingDate, id, numberofPersons, safari_id, totalAmount,
@@ -11,6 +14,7 @@ const MyReservation = ({ reservation }) => {
   const handleCancel = () => {
     //
     console.log(`Cancelling ${id}`);
+    dispatch(cancelReservation(id));
   };
   return (
     <div key={id} className="flex items-center justify-center mt-5 ">

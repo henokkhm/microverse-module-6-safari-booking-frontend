@@ -23,7 +23,6 @@ function SafariDetailsPage() {
       <>
         <h1>{safariData.title}</h1>
         <p>{safariData.description}</p>
-        {/* More fields here */}
       </>
       )}
     </div>

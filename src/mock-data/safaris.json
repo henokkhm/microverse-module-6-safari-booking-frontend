@@ -15,7 +15,7 @@
     "description": "Explore the unique waterways and lush islands of the Okavango Delta.\n\nImmerse yourself in the beauty of the Okavango Delta, known for its picturesque waterways and abundant wildlife. Prepare for an adventure of a lifetime with mokoro rides, game walks, and breathtaking sunsets. Navigate the maze of channels lined with papyrus reeds, encountering hippos, crocodiles, and colorful birdlife. Witness the seasonal floodwaters transform the landscape, creating a haven for wildlife and a paradise for photographers. Experience the magic of gliding silently through crystal-clear waters, surrounded by the sights and sounds of Africa's pristine wilderness.\n\nDon't miss your chance to explore the Okavango Delta. Book your Delta Discovery today!",
     "price": 4200,
     "duration": 8,
-    "img": "okavango-cover.png"
+    "img": "okavango-delta-cover.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "description": "Experience the mesmerizing landscapes of the world's oldest desert.\n\nEmbark on a thrilling adventure through the red dunes and surreal landscapes of the Namib Desert. Discover ancient rock formations, encounter unique wildlife, and stargaze in the clear desert skies. Explore the iconic Sossusvlei, where towering sand dunes meet stark white clay pans, creating a dramatic contrast against the blue sky. Trek through hidden canyons and rugged mountains, uncovering the secrets of this ancient desert ecosystem. Experience the magic of sunrise over the dunes and sunset over the Atlantic Ocean, painting the landscape in shades of gold and crimson.\n\nDon't miss your chance to explore the mesmerizing Namib Desert. Book your expedition today!",
     "price": 3800,
     "duration": 6,
-    "img": "namib-cover.png"
+    "img": "namib-desert-cover.png"
   },
   {
     "id": 4,
@@ -51,7 +51,7 @@
     "description": "Embark on a once-in-a-lifetime trek to encounter mountain gorillas in Bwindi Impenetrable Forest.\n\nEmbark on a challenging yet rewarding trek through the dense Bwindi Impenetrable Forest to witness the majestic mountain gorillas. Experience the thrill of close encounters with these incredible creatures. Trek through lush rainforests, tangled vines, and mist-shrouded valleys, accompanied by experienced guides who will share their knowledge of the gorillas and their habitat. Learn about conservation efforts to protect these endangered animals and the unique ecosystem they inhabit. Immerse yourself in the sights, sounds, and smells of the jungle, as you search for these elusive and remarkable primates.\n\nEmbark on a once-in-a-lifetime adventure. Book your Bwindi Gorilla Trek today!",
     "price": 5000,
     "duration": 10,
-    "img": "bwindi-cover.png"
+    "img": "bwindi-gorilla-cover.png"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "description": "Discover the vastness and unique ecosystems of the Kalahari Desert.\n\nExplore the striking landscapes and unique ecosystems of the Kalahari Desert. Enjoy guided walks, wildlife tracking, and stargazing in the clear desert nights. Experience the silence and solitude of the desert, where the vast expanses of sand and sky stretch endlessly in every direction. Encounter desert-adapted wildlife, such as meerkats, oryx, and springbok, as they navigate the harsh desert environment. Learn about the adaptations and survival strategies of these remarkable creatures, as you observe them in their natural habitat.\n\nExperience the wonder of the Kalahari Desert. Book your expedition now!",
     "price": 3800,
     "duration": 6,
-    "img": "kalahari-cover.png"
+    "img": "kalahari-desert-cover.png"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "description": "Challenge yourself with a trek to the 'Mountains of the Moon' in Rwenzori National Park.\n\nEmbark on an adventurous trek to the Rwenzori Mountains, also known as the 'Mountains of the Moon.' Experience diverse ecosystems, stunning alpine scenery, and the thrill of summiting one of Africa's tallest peaks. Traverse glaciers, scramble over boulders, and navigate through lush rainforests, as you ascend towards the summit. Encounter unique flora and fauna found nowhere else on Earth, including endemic species adapted to the extreme conditions of the high-altitude environment. Witness breathtaking sunrises and sunsets from your mountain camp, surrounded by towering peaks and endless skies.\n\nChallenge yourself with the Rwenzori Mountain Trek. Book now!",
     "price": 4700,
     "duration": 8,
-    "img": "rwenzori-cover.png"
+    "img": "rwenzori-mountain-cover.png"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "description": "Cruise along the Chobe River and witness the incredible concentration of wildlife.\n\nEmbark on a river safari along the Chobe River, known for its incredible wildlife concentrations. Enjoy boat cruises, bird watching, and the opportunity to witness large herds of elephants and other animals. Explore the labyrinth of channels and islands that make up the Chobe River system, encountering hippos, crocodiles, and a dazzling array of birdlife. Watch in awe as elephants gather at the water's edge to drink and play, while herds of buffalo graze on the lush riverbanks. Experience the magic of the African bush from the comfort of your boat, as you glide silently through this pristine wilderness.\n\nDon't miss your chance to experience the incredible Chobe River Safari. Book now!",
     "price": 4200,
     "duration": 7,
-    "img": "chobe-cover.png"
+    "img": "chobe-river-cover.png"
   },
   {
     "id": 10,

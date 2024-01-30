@@ -12,7 +12,7 @@ const MyReservations = () => {
   useEffect(() => {
     dispatch(getReservations());
   }, [dispatch]);
-
+  if (reservations[1]) console.log(reservations[1].safari.img);
   return (
     <>
       <div className="flex flex-col justify-center h-screen w-full md:w-11/12 mx-auto ">

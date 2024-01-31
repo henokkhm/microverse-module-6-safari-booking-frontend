@@ -45,7 +45,7 @@ const Layout = () => {
         breakpoint={MOBILE_BREAKPOINT}
       />
 
-      <main className={`${((windowWidth > MOBILE_BREAKPOINT) || sidebarMenuIsOpen) ? 'ml-96' : 'ml-10'} `}>
+      <main className={`ml-10 duration-300 ${((windowWidth > MOBILE_BREAKPOINT) || sidebarMenuIsOpen) && 'translate-x-64'} `}>
         <Outlet />
       </main>
     </div>

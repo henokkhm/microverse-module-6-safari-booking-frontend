@@ -55,7 +55,7 @@
     }
 
     .social-icon {
-      @apply hover:scale-105 hover:rotate-12 duration-150
+      @apply hover:scale-105 duration-150
     }
 
     .nav-link {

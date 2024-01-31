@@ -9,7 +9,7 @@ const MyReservation = ({ reservation }) => {
   const dispatch = useDispatch();
   const {
     // eslint-disable-next-line camelcase
-    bookingDate, id, numberofPersons, safari_id, totalAmount,
+    bookingDate, id, numberofPersons, totalAmount, safari,
   } = reservation;
   const handleCancel = () => {
     //
@@ -19,10 +19,10 @@ const MyReservation = ({ reservation }) => {
   return (
     <div key={id} className="flex items-center justify-center mt-5 ">
       <div className="flex gap-3 flex-col items-center justify-around w-screen py-2 bg-white rounded-lg shadow-lg sm:flex-row">
-        <img className="rounded-full w-20 h-20" src={defaultImage} alt="safari" />
+        <img className="rounded-full w-20 h-20" src={safari.img ? safari.img : defaultImage} alt="safari" />
         <div className="flex-grow md:ml-10 grid grid-cols-4 gap-5">
           {/* eslint-disable-next-line camelcase */}
-          <Column label="Safari:" value={safari_id} />
+          <Column label="Safari:" value={safari.name} />
           <Column label="Number Of Persons:" value={numberofPersons} />
           <Column label="Amount:" value={totalAmount} />
           <Column label="Trek Date:" value={bookingDate} />
@@ -48,6 +48,10 @@ MyReservation.propTypes = {
     numberofPersons: PropTypes.string.isRequired,
     safari_id: PropTypes.number.isRequired,
     totalAmount: PropTypes.number.isRequired,
+    safari: PropTypes.shape({
+      name: PropTypes.string,
+      img: PropTypes.string,
+    }),
   }).isRequired,
 };
 

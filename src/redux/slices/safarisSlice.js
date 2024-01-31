@@ -5,7 +5,9 @@ import BaseUrl, { getHeaders } from '../../api/api_helper';
 import showMessage, { showError } from '../../helpers';
 import { loading, loaded } from './loaderSlice';
 
-const initialState = [];
+import mockSafaris from '../../mock-data/safaris.json';
+
+const initialState = [...mockSafaris];
 
 export const getSafaris = createAsyncThunk('safaris/getSafaris', async (_, { dispatch }) => {
   dispatch(loading());

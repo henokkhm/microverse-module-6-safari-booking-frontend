@@ -33,7 +33,7 @@ const LoginForm = () => {
       className="grid pt-4 pb-1 items-center space-y-6 w-full"
     >
       <NovaFormInput
-        cId="user[email]"
+        cId="user[username]"
         cMinLen="2"
         cPlaceholder="Enter your email"
         isRequired

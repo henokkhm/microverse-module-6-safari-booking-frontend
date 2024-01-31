@@ -8,14 +8,14 @@ function SafariCard({ coverImageURL, name, description }) {
   const shortDescription = description.split('\n\n')[0];
 
   return (
-    <div className="flex flex-col gap-4 text-center items-center max-w-96">
+    <div className="flex flex-col my-8 gap-4 text-center items-center max-w-[28rem] mx-8 cursor-pointer hover:scale-105 duration-200 hover:border-gray-100 border-2 border-transparent">
       <div>
         <img src={`/safaris/${coverImageURL}`} alt={`photograph of ${name}`} />
       </div>
       <div className="pt-2 pb-8">
         <h3 className="text-xl uppercase font-bold py-6">{name}</h3>
         <div className="border-b-4 mb-6 mx-auto border-dotted border-gray-200 w-24" />
-        <p className="text-gray-400 pb-6 leading-7">{shortDescription}</p>
+        <p className="text-gray-400 px-2 pb-6 leading-7">{shortDescription}</p>
         <div className="flex gap-3 justify-center items-center">
           <a href="/">
             <img

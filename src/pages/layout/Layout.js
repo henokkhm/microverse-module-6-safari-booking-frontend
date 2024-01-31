@@ -38,7 +38,7 @@ const Layout = () => {
   // }
 
   return (
-    <div className="min-w-[380px] max-w-[1000px] mx-auto min-h-screen bg-white">
+    <div className="min-w-[380px] max-w-[1440px] mx-auto min-h-screen bg-white">
       <Sidebar
         sidebarMenuIsOpen={sidebarMenuIsOpen}
         toggleSidebarMenu={toggleSidebarMenu}

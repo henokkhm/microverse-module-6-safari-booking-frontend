@@ -7,6 +7,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
     - [🚀 Live Demo](#live-demo)
+     - [🔗 Link for the Backend ](#-link-for-the-backend-)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -63,6 +64,7 @@
 
 - [Live Demo Link](#)
 
+ 🔗 Link for the Frontend <a href="https://github.com/henokkhm/microverse-module-6-safari-booking-backend" name="frontend"></a>
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
@@ -128,17 +130,33 @@ GitHub pages
 
 ## 👥 Author <a name="author"></a>
 
+👤 **Bleu Yves Sopoude**
+
+ - GitHub: [@Bleu-Yves-Sopoude](https://github.com/Bleu-Yves-Sopoude)
+ - Linkedin: [@in/bleu-yves](https://www.linkedin.com/in/bleu-yves/)
+ - GitHub: [@bleuYves](https://twitter.com/bleuYves)
+
+👤 **Foga Kater Amos**
+ - GitHub: [@katfogy](https://github.com/katfogy)
+ - Twitter: [@Katfogy](https://twitter.com/Katfogy)
+ - LinkedIn: [LinkedIn](https://www.linkedin.com/in/foga-amos-2b5371103/)
+  
+👤 **Henok Kirubel Hailemariam**
+
+- GitHub: [@henokkhm](https://github.com/henokkhm)
+- Twitter: [@henokkhm](https://twitter.com/henokkhm)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/henokkhm/)
+
+👤 **WILSAN**
+- GitHub: [@githubhandle](https://github.com/Wils-FOURR-speed)
+- Twitter: [@twitterhandle](https://twitter.com/WFourrspeed)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nji-wilsan-ndenge-47b7a826a/)
+
 👤 **Khuraijam Henary Singh**
 
 - GitHub: [@HenaryKhuraijam](https://github.com/HenaryKhuraijam)
 - Twitter: [@HenaryKhuraijam](https://twitter.com/HenaryKhuraijam)
 - LinkedIn: [Henary Khuraijam](https://www.linkedin.com/in/henary-khuraijam-50487317a)
-
-👤 **WILSAN**
-
-- GitHub: [@githubhandle](https://github.com/Wils-FOURR-speed)
-- Twitter: [@twitterhandle](https://twitter.com/WFourrspeed)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nji-wilsan-ndenge-47b7a826a/)
 
 
 <!-- FUTURE FEATURES -->

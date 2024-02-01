@@ -73,7 +73,7 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
               <NavLink
                 className="nav-link"
                 onClick={handleSidebarClose}
-                to="/app/reserve"
+                to="/app/make-reservation"
               >
                 Reserve
               </NavLink>

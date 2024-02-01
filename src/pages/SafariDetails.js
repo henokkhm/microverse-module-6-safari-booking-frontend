@@ -62,7 +62,7 @@ function SafariDetailsPage() {
             {details}
           </p>
           <Link
-            to={`/app/reserve/${id}`}
+            to={`/app/make-reservation/${id}`}
             className="btn-primary w-32 text-center"
           >
             Reserve

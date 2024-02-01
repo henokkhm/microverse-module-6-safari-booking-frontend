@@ -17,8 +17,9 @@ import { useSignOut } from '../hooks/authHelper';
 function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
   const { windowWidth } = useWindowSize();
   const handleSignOut = useSignOut();
-  // TODO: check if user is admin
-  const isAdmin = true;
+
+  const userRole = localStorage.getItem('role');
+  const isAdmin = userRole === 'admin';
 
   const handleSidebarClose = () => {
     if (sidebarMenuIsOpen) {
@@ -65,7 +66,11 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
         <nav className="mt-16">
           <ul className="flex flex-col gap-2">
             <li>
-              <NavLink className="nav-link" onClick={handleSidebarClose} to="/app/safaris">
+              <NavLink
+                className="nav-link"
+                onClick={handleSidebarClose}
+                to="/app/safaris"
+              >
                 Safaris
               </NavLink>
             </li>
@@ -113,7 +118,11 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
         </nav>
 
         {/* Log out button */}
-        <button className="mt-auto border-2 border-red-600 ml-2 mb-10 rounded text-red-600 py-1 w-4/5 hover:scale-105 duration-200 text-lg" type="button" onClick={handleSignOut}>
+        <button
+          className="mt-auto border-2 border-red-600 ml-2 mb-10 rounded text-red-600 py-1 w-4/5 hover:scale-105 duration-200 text-lg"
+          type="button"
+          onClick={handleSignOut}
+        >
           Sign Out
         </button>
 

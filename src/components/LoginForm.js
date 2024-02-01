@@ -16,6 +16,7 @@ const LoginForm = () => {
         if (token && token !== '') {
           localStorage.setItem('token', token);
           localStorage.setItem('user_id', userData.data.id);
+          localStorage.setItem('role', userData.data.role);
           navigate('app/safaris');
         }
       })

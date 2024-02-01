@@ -68,7 +68,7 @@ const ReservationForm = ({ safariId }) => {
       </div>
       <label htmlFor="date">
         <p className="pb-4">Please select your desired date:</p>
-        <input type="date" id="date" placeholder="Select date" required />
+        <input className="p-4" type="date" id="date" placeholder="Select date" required />
       </label>
       <NovaFormInput
         cType="number"

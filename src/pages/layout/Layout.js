@@ -45,9 +45,9 @@ const Layout = () => {
         breakpoint={MOBILE_BREAKPOINT}
       />
 
-      <main className={`ml-10 duration-300 ${((windowWidth > MOBILE_BREAKPOINT) || sidebarMenuIsOpen) && 'translate-x-64'} `}>
+      <div className={`duration-300 ${((windowWidth > MOBILE_BREAKPOINT) || sidebarMenuIsOpen) && 'ml-64'} `}>
         <Outlet />
-      </main>
+      </div>
     </div>
   );
 };

@@ -13,11 +13,19 @@ import Restricted from './Restricted';
 
 const MyRoutes = () => useRoutes([
   {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/signup',
+    element: <SignUp />,
+  },
+  {
     path: '/',
     element: <Layout />,
     children: [
       {
-        index: true,
+        path: '/safaris',
         element: <Homepage />,
       },
       {
@@ -30,33 +38,34 @@ const MyRoutes = () => useRoutes([
       },
       {
         path: '/my-reservations',
-        element: <Restricted><MyReservations /></Restricted>,
+        element: (
+          <Restricted>
+            <MyReservations />
+          </Restricted>
+        ),
       },
       {
         path: '/add-safari',
-        element: <Restricted><AddSafari /></Restricted>,
+        element: (
+          <Restricted>
+            <AddSafari />
+          </Restricted>
+        ),
       },
       {
         path: '/delete-safari',
         element: <DeleteSafaris />,
       },
-      {
-        path: '*',
-        element: <div>Page not found</div>,
-      },
-      {
-        path: '/signin',
-        element: <Login />,
-      },
-      {
-        path: '/signup',
-        element: <SignUp />,
-      },
+
       {
         path: '/register',
         element: <Registration />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <div>Page not found</div>,
   },
 ]);
 

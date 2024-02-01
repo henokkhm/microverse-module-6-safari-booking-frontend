@@ -29,7 +29,7 @@ const LoginForm = () => {
     <form
       action="submit"
       onSubmit={handleSubmit}
-      className="grid items-center space-y-7 w-full"
+      className="form"
     >
       <NovaFormInput
         cId="user[username]"

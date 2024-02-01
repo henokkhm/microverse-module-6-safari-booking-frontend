@@ -76,7 +76,14 @@
     .nav-link.active {
       @apply bg-st-green-400
     }
+
   }
+
+  .slick-slider {
+    display: flex !important;
+    align-items: center !important;
+  }
+
 
   /* *, ::before, ::after {
     outline: 1px solid red;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 
 import SafariCard from './SafariCard';
-import { NextArrow, PrevArrow } from './SliderButtons';
+import { NextArrow, PrevArrow } from './SliderArrows';
 import { getSafaris } from '../redux/slices/safarisSlice';
 import useWindowSize from '../hooks/useWindowSize';
 
@@ -36,17 +36,20 @@ function SafarisList() {
     </Link>
   ));
 
-  const gridClasses = `grid gap-4 ${windowWidth < 900 ? 'grid-cols-1' : 'grid-cols-2'}`;
+  if (windowWidth < 1160) {
+    return <div className="flex flex-col gap-4 items-center">{safarisArr}</div>;
+  }
 
-  if (windowWidth < 1200) {
-    return <div className={gridClasses}>{safarisArr}</div>;
+  let slidesToShow = 2;
+  if (windowWidth > 1500) {
+    slidesToShow = 3;
   }
 
   return (
     <div>
       <Slider
         slidesToScroll={1}
-        slidesToShow={3}
+        slidesToShow={slidesToShow}
         nextArrow={<NextArrow />}
         prevArrow={<PrevArrow />}
         gap={10}

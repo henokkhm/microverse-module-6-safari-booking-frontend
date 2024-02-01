@@ -1,32 +1,20 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import BaseUrl from '../api/api_helper';
 
 function Registration() {
-  const [formData, setFormData] = useState({});
-
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    try {
-      const response = await fetch('http://127.0.0.1:3000/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        // Registration successful, handle the response accordingly
-      } else {
-        // Registration failed, handle the error
-      }
-    } catch (error) {
-      // Handle any network or other errors
-    }
-  };
-
-  const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    const registrationData = new FormData(event.target);
+    await axios.post(`${BaseUrl}api/auth/signup`, registrationData).then((response) => {
+      navigate('/signin');
+      console.log(response);
+    }).catch((err) => {
+      console.log(err);
+    });
+    event.target.reset();
   };
 
   const divstyle = {
@@ -74,12 +62,16 @@ function Registration() {
         Registration Page
       </h2>
       <form onSubmit={handleSubmit}>
-        <input style={forminput} className="form-input" type="email" name="email" placeholder="Enter email" onChange={handleChange} />
-        <input style={forminput} className="form-input" type="password" name="password" placeholder="Enter password" onChange={handleChange} />
-        <input style={forminput} className="form-input" type="text" name="username" placeholder="Enter First name" onChange={handleChange} />
-        <input style={forminput} className="form-input" type="text" name="username" placeholder="Enter Last name" onChange={handleChange} />
-        <input style={forminput} className="form-input" type="number" name="username" placeholder="Enter Phone Number" onChange={handleChange} />
-        <input style={forminput} className="form-input" type="number" name="username" placeholder="Enter role" onChange={handleChange} />
+        <input style={forminput} className="form-input" type="email" name="user[email]" placeholder="Enter email" />
+        <input style={forminput} className="form-input" type="password" name="user[password]" placeholder="Enter password" />
+        <input style={forminput} className="form-input" type="text" name="user[first_name]" placeholder="Enter First name" />
+        <input style={forminput} className="form-input" type="text" name="user[last_name]" placeholder="Enter Last name" />
+        <input style={forminput} className="form-input" type="number" name="user[phone_no]" placeholder="Enter Phone Number" />
+        <select style={forminput} className="form-input" name="user[role]" id="roleSelect">
+          <option value="admin">admin</option>
+          <option value="user">user</option>
+        </select>
+        <input style={forminput} className="form-input" type="text" name="user[username]" placeholder="Enter Username" />
         <button style={formbutton} className="form-button" type="submit">Register/Signup</button>
       </form>
     </div>

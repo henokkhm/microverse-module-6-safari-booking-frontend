@@ -20,7 +20,7 @@ function SafarisList() {
 
   if (safaris.length === 0) {
     return (
-      <h2 className="form-header">
+      <h2 className="header">
         There are no Safaris listed yet. Please add Safaris if you are an admin
       </h2>
     );

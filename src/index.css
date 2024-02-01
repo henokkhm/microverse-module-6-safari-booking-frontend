@@ -41,10 +41,10 @@
     }
 
     .page-container {
-      @apply min-h-screen min-w-[530px] flex flex-col gap-24 items-center justify-center bg-st-green-50 md:bg-white
+      @apply min-h-screen min-w-[530px] flex flex-col gap-24 bg-st-green-50 md:bg-white
     }
 
-    .form-header {
+    .header {
       @apply text-3xl text-left font-bold pt-16
     }
 

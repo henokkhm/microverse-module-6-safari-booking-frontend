@@ -17,9 +17,6 @@ const AddSafari = () => {
     e.preventDefault();
     setNotSubmit(false);
     const newSafariProfile = new FormData(e.target);
-    newSafariProfile.forEach((value, key) => {
-      console.log(key, value);
-    });
     dispatch(addSafari(newSafariProfile));
     e.target.reset();
     resetImage();

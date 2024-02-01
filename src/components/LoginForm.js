@@ -35,7 +35,7 @@ const LoginForm = () => {
       <NovaFormInput
         cId="user[username]"
         cMinLen="2"
-        cPlaceholder="Enter your email"
+        cPlaceholder="Enter your username"
         isRequired
       />
       <NovaFormInput

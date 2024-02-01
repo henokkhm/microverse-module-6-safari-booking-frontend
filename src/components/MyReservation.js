@@ -12,8 +12,6 @@ const MyReservation = ({ reservation }) => {
     bookingDate, id, numberofPersons, totalAmount, safari,
   } = reservation;
   const handleCancel = () => {
-    //
-    console.log(`Cancelling ${id}`);
     dispatch(cancelReservation(id));
   };
   return (

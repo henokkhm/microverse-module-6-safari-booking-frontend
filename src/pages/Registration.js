@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import RegistrationForm from './RegistrationForm';
+import RegistrationForm from '../components/RegistrationForm';
 import splashScreenImg from '../assets/logo.png';
 
 function Registration() {

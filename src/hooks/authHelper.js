@@ -29,6 +29,11 @@ export const useSignOut = () => {
         navigate('/');
       })
       .catch((err) => {
+        // Ignore expired session
+        if (err.message === 'Request failed with status code 401') {
+          localStorage.removeItem('token');
+          return navigate('/');
+        }
         throw new Error(err);
       });
   };

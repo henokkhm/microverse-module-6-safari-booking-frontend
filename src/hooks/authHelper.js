@@ -5,12 +5,12 @@ import BaseUrl from '../api/api_helper';
 
 const useLoginStatus = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const token = localStorage.getItem('token');
   useEffect(() => {
+    const token = localStorage.getItem('token');
     if (token && token !== '') {
       setIsLoggedIn(true);
     }
-  }, [token]);
+  }, []);
   return isLoggedIn;
 };
 
@@ -18,12 +18,14 @@ export const useSignOut = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
   const handleSignOut = async () => {
-    await axios.delete(`${BaseUrl}api/auth/logout`, { headers: { Authorization: token } })
-      .then(() => {
-        localStorage.clear();
+    await axios
+      .delete(`${BaseUrl}api/auth/logout`, {
+        headers: { Authorization: token },
       })
       .then(() => {
-        window.location.reload();
+        localStorage.removeItem('token');
+      })
+      .then(() => {
         navigate('/');
       })
       .catch((err) => {

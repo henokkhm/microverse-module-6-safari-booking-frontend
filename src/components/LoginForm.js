@@ -1,28 +1,27 @@
 import axios from 'axios';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BaseUrl from '../api/api_helper';
 import NovaFormInput from './shared/NovaFormInput ';
 
 const LoginForm = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const loginData = new FormData(e.target);
-    await axios.post(`${BaseUrl}api/auth/login`, loginData).then((response) => {
-      const token = response.headers.authorization;
-      if (token && token !== '') {
-        localStorage.setItem('token', token);
-      }
-
-      if (location.pathname === '/signin') {
-        navigate('/');
-      } else {
-        navigate(location.pathname);
-      }
-    }).catch((err) => {
-      document.getElementById('msg').textContent = `${err.response ? err.response.data : err.message}!`;
-    });
+    await axios
+      .post(`${BaseUrl}api/auth/login`, loginData)
+      .then((response) => {
+        const token = response.headers.authorization;
+        if (token && token !== '') {
+          localStorage.setItem('token', token);
+          navigate('app/safaris');
+        }
+      })
+      .catch((err) => {
+        document.getElementById('msg').textContent = `${
+          err.response ? err.response.data : err.message
+        }!`;
+      });
     e.target.reset();
   };
 
@@ -30,7 +29,7 @@ const LoginForm = () => {
     <form
       action="submit"
       onSubmit={handleSubmit}
-      className="grid pt-4 pb-1 items-center space-y-6 w-full"
+      className="grid items-center space-y-7 w-full"
     >
       <NovaFormInput
         cId="user[username]"
@@ -47,7 +46,7 @@ const LoginForm = () => {
       />
       <button
         type="submit"
-        className="opacity-90 w-full py-2 tracking-wide text-white transition-colors duration-200 transform bg-lime-400 rounded-md hover:bg-lime-300 focus:outline-lime-500 hover:font-extrabold"
+        className="btn-primary"
       >
         Login
       </button>

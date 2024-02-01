@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 function DeleteSafariPage() {
   const [safariId, setSafariId] = useState('');
@@ -14,10 +15,18 @@ function DeleteSafariPage() {
   };
 
   return (
-    <div>
-      <input type="text" value={safariId} onChange={(e) => setSafariId(e.target.value)} />
-      <button type="button" onClick={deleteSafari}>Delete Safari</button>
-    </div>
+    <ProtectedRoute>
+      <main className="">
+        <input
+          type="text"
+          value={safariId}
+          onChange={(e) => setSafariId(e.target.value)}
+        />
+        <button type="button" onClick={deleteSafari}>
+          Delete Safari
+        </button>
+      </main>
+    </ProtectedRoute>
   );
 }
 

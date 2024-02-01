@@ -1,5 +1,11 @@
+import ProtectedRoute from '../components/ProtectedRoute';
+
 function Reserve() {
-  return <div>Make a Reservation Page</div>;
+  return (
+    <ProtectedRoute>
+      <main className="">Make a Reservation Page</main>
+    </ProtectedRoute>
+  );
 }
 
 export default Reserve;

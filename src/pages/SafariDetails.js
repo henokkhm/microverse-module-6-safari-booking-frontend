@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 function SafariDetailsPage() {
   const [safariData, setSafariData] = useState(null);
@@ -18,14 +19,16 @@ function SafariDetailsPage() {
   }, []);
 
   return (
-    <div>
-      {safariData && (
-      <>
-        <h1>{safariData.title}</h1>
-        <p>{safariData.description}</p>
-      </>
-      )}
-    </div>
+    <ProtectedRoute>
+      <main>
+        {safariData && (
+          <>
+            <h1>{safariData.title}</h1>
+            <p>{safariData.description}</p>
+          </>
+        )}
+      </main>
+    </ProtectedRoute>
   );
 }
 

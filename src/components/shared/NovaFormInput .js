@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const NovaFormInput = (props) => {
   const {
-    cType, cId, cPlaceholder, isRequired, cMinLen, cMaxLen,
+    cType, cId, cPlaceholder, isRequired, cMinLen, cMaxLen, onChange,
   } = props;
   return (
     <div className="relative w-full">
@@ -16,6 +16,7 @@ const NovaFormInput = (props) => {
         minLength={cMinLen}
         maxLength={cMaxLen}
         className="peer opacity-90"
+        onChange={onChange}
       />
       <label
         htmlFor={cId}
@@ -31,6 +32,7 @@ NovaFormInput.defaultProps = {
   cType: 'text',
   cMinLen: null,
   cMaxLen: null,
+  onChange: () => {},
 };
 
 NovaFormInput.propTypes = {
@@ -40,6 +42,7 @@ NovaFormInput.propTypes = {
   cMinLen: PropTypes.string,
   cMaxLen: PropTypes.string,
   isRequired: PropTypes.bool.isRequired,
+  onChange: PropTypes.func,
 };
 
 export default NovaFormInput;

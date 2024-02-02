@@ -9,15 +9,25 @@ const MyReservation = ({ reservation }) => {
   const dispatch = useDispatch();
   const {
     // eslint-disable-next-line camelcase
-    bookingDate, id, numberofPersons, totalAmount, safari,
+    bookingDate,
+    id,
+    numberofPersons,
+    totalAmount,
+    safari,
   } = reservation;
+
   const handleCancel = () => {
     dispatch(cancelReservation(id));
   };
+
   return (
-    <div key={id} className="flex items-center justify-center mt-5 ">
-      <div className="flex gap-3 flex-col items-center justify-around w-screen py-2 bg-white rounded-lg shadow-lg sm:flex-row">
-        <img className="rounded-full w-20 h-20" src={safari.img ? safari.img : defaultImage} alt="safari" />
+    <div key={id} className="flex items-center justify-center">
+      <div className="flex gap-3 flex-col items-center justify-around w-screen bg-white rounded-lg shadow-sm sm:flex-row border-2 border-gray-100">
+        <img
+          className="w-40 h-30 rounded-l-lg"
+          src={safari.img ? `/safaris/${safari.img}` : defaultImage}
+          alt="safari"
+        />
         <div className="flex-grow md:ml-10 grid grid-cols-4 gap-5">
           {/* eslint-disable-next-line camelcase */}
           <Column label="Safari:" value={safari.name} />
@@ -25,15 +35,13 @@ const MyReservation = ({ reservation }) => {
           <Column label="Amount:" value={totalAmount} />
           <Column label="Trek Date:" value={bookingDate} />
         </div>
-        <small>
-          <button
-            onClick={handleCancel}
-            type="button"
-            className="px-2 py-1 font-semibold bg-transparent border border-red-400 rounded hover:bg-red-500 text-grey-700 hover:text-white m-7 border-blue"
-          >
-            Cancel
-          </button>
-        </small>
+        <button
+          onClick={handleCancel}
+          type="button"
+          className="px-5 py-1 font-semibold bg-transparent duration-300 border border-red-400 rounded text-red-700 hover:bg-red-500 hover:text-white m-7"
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );

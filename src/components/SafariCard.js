@@ -17,23 +17,13 @@ function SafariCard({ coverImageURL, name, description }) {
         <div className="border-b-4 mb-6 mx-auto border-dotted border-gray-200 w-24" />
         <p className="text-gray-400 px-2 pb-6 leading-7">{shortDescription}</p>
         <div className="flex gap-3 justify-center items-center">
-          <a href="/">
-            <img
-              className="social-icon"
-              src={facebookIcon}
-              alt="facebook icon"
-            />
-          </a>
-          <a href="/">
-            <img className="social-icon" src={twitterIcon} alt="twitter icon" />
-          </a>
-          <a href="/">
-            <img
-              className="social-icon"
-              src={instagramIcon}
-              alt="instagram icon"
-            />
-          </a>
+          <img className="social-icon" src={facebookIcon} alt="facebook icon" />
+          <img className="social-icon" src={twitterIcon} alt="twitter icon" />
+          <img
+            className="social-icon"
+            src={instagramIcon}
+            alt="instagram icon"
+          />
         </div>
       </div>
     </div>

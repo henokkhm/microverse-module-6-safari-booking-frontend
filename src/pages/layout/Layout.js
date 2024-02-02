@@ -38,16 +38,16 @@ const Layout = () => {
   // }
 
   return (
-    <div className="min-w-[380px] max-w-[1440px] mx-auto min-h-screen bg-white">
+    <div className="min-w-[380px] max-w-[1640px] mx-auto min-h-screen bg-white">
       <Sidebar
         sidebarMenuIsOpen={sidebarMenuIsOpen}
         toggleSidebarMenu={toggleSidebarMenu}
         breakpoint={MOBILE_BREAKPOINT}
       />
 
-      <main className={`ml-10 duration-300 ${((windowWidth > MOBILE_BREAKPOINT) || sidebarMenuIsOpen) && 'translate-x-64'} `}>
+      <div className={`duration-300 ${((windowWidth > MOBILE_BREAKPOINT) || sidebarMenuIsOpen) && 'ml-[224px]'} `}>
         <Outlet />
-      </main>
+      </div>
     </div>
   );
 };

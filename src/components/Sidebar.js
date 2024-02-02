@@ -12,12 +12,15 @@ import pinterestIcon from '../assets/icons/socials/pinterest.svg';
 import Overlay from './Overlay';
 
 import useWindowSize from '../hooks/useWindowSize';
-import useLoginStatus, { useSignOut } from '../hooks/authHelper';
+import { useSignOut } from '../hooks/authHelper';
 
 function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
   const { windowWidth } = useWindowSize();
-  const isLoggedIn = useLoginStatus();
   const handleSignOut = useSignOut();
+
+  // const userRole = localStorage.getItem('role');
+  // const isAdmin = userRole === 'admin';
+  const isAdmin = true;
 
   const handleSidebarClose = () => {
     if (sidebarMenuIsOpen) {
@@ -64,7 +67,11 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
         <nav className="mt-16">
           <ul className="flex flex-col gap-2">
             <li>
-              <NavLink className="nav-link" onClick={handleSidebarClose} to="/">
+              <NavLink
+                className="nav-link"
+                onClick={handleSidebarClose}
+                to="/app/safaris"
+              >
                 Safaris
               </NavLink>
             </li>
@@ -72,7 +79,7 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
               <NavLink
                 className="nav-link"
                 onClick={handleSidebarClose}
-                to="/reserve"
+                to="/app/make-reservation"
               >
                 Reserve
               </NavLink>
@@ -81,18 +88,27 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
               <NavLink
                 className="nav-link"
                 onClick={handleSidebarClose}
-                to="/my-reservations"
+                to="/app/my-reservations"
               >
                 My Reservations
               </NavLink>
             </li>
-            {isLoggedIn ? (
+            {isAdmin && (
               <>
                 <li>
                   <NavLink
                     className="nav-link"
                     onClick={handleSidebarClose}
-                    to="/add-safari"
+                    to="/app/register-admin"
+                  >
+                    Add Admin User
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="nav-link"
+                    onClick={handleSidebarClose}
+                    to="/app/add-safari"
                   >
                     Add Safari
                   </NavLink>
@@ -101,39 +117,9 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
                   <NavLink
                     className="nav-link"
                     onClick={handleSidebarClose}
-                    to="/delete-safari"
+                    to="/app/delete-safari"
                   >
                     Delete Safari
-                  </NavLink>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="nav-link"
-                    onClick={handleSignOut}
-                  >
-                    Sign Out
-                  </button>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <NavLink
-                    className="nav-link"
-                    onClick={handleSidebarClose}
-                    to="/signin"
-                  >
-                    Sign In
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    className="nav-link"
-                    onClick={handleSidebarClose}
-                    to="/register"
-                  >
-                    Register
                   </NavLink>
                 </li>
               </>
@@ -142,9 +128,16 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
         </nav>
 
         {/* Log out button */}
+        <button
+          className="mt-auto border-2 border-red-600 ml-2 mb-10 rounded text-red-600 py-1 w-4/5 hover:scale-105 duration-200 text-lg"
+          type="button"
+          onClick={handleSignOut}
+        >
+          Sign Out
+        </button>
 
         {/* Social Media Links */}
-        <section className="mt-auto pr-6">
+        <section className="pr-6">
           <ul className="flex gap-3 items-center justify-center">
             <li>
               <a href="/">

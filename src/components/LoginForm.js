@@ -1,37 +1,35 @@
 import axios from 'axios';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BaseUrl from '../api/api_helper';
 import NovaFormInput from './shared/NovaFormInput ';
 
 const LoginForm = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const loginData = new FormData(e.target);
-    await axios.post(`${BaseUrl}api/auth/login`, loginData).then((response) => {
-      const token = response.headers.authorization;
-      if (token && token !== '') {
-        localStorage.setItem('token', token);
-      }
-
-      if (location.pathname === '/signin') {
-        navigate('/');
-      } else {
-        navigate(location.pathname);
-      }
-    }).catch((err) => {
-      document.getElementById('msg').textContent = `${err.response ? err.response.data : err.message}!`;
-    });
+    await axios
+      .post(`${BaseUrl}api/auth/login`, loginData)
+      .then((response) => {
+        const token = response.headers.authorization;
+        const userData = response.data;
+        if (token && token !== '') {
+          localStorage.setItem('token', token);
+          localStorage.setItem('user_id', userData.data.id);
+          localStorage.setItem('role', userData.data.role);
+          navigate('app/safaris');
+        }
+      })
+      .catch((err) => {
+        document.getElementById('msg').textContent = `${
+          err.response ? err.response.data : err.message
+        }!`;
+      });
     e.target.reset();
   };
 
   return (
-    <form
-      action="submit"
-      onSubmit={handleSubmit}
-      className="grid pt-4 pb-1 items-center space-y-6 w-full"
-    >
+    <form action="submit" onSubmit={handleSubmit} className="form">
       <NovaFormInput
         cId="user[username]"
         cMinLen="2"
@@ -45,12 +43,10 @@ const LoginForm = () => {
         cPlaceholder="Enter your Password"
         isRequired
       />
-      <button
-        type="submit"
-        className="opacity-90 w-full py-2 tracking-wide text-white transition-colors duration-200 transform bg-lime-400 rounded-md hover:bg-lime-300 focus:outline-lime-500 hover:font-extrabold"
-      >
+      <button type="submit" className="btn-primary">
         Login
       </button>
+      <div className="error-msg" id="msg" />
     </form>
   );
 };

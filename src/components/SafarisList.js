@@ -50,8 +50,8 @@ function SafarisList() {
       <Slider
         slidesToScroll={1}
         slidesToShow={slidesToShow}
-        nextArrow={<NextArrow />}
-        prevArrow={<PrevArrow />}
+        nextArrow={<NextArrow onClick={() => {}} />}
+        prevArrow={<PrevArrow onClick={() => {}} />}
         gap={10}
       >
         {safarisArr}

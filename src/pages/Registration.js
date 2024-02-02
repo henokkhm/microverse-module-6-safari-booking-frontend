@@ -10,7 +10,7 @@ function Registration() {
         <img className="h-80" src={splashScreenImg} alt="safari trek logo" />
         <h2 className="header">Create a user account</h2>
         <RegistrationForm />
-        <div className="link-cus flex gap-3 justify-center">
+        <div className="flex gap-3 justify-center">
           Already have an account?
           <Link to="/" className="link-cus-title">
             Login

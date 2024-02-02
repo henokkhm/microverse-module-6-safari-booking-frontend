@@ -10,7 +10,7 @@ function Login() {
         <img className="h-80" src={splashScreenImg} alt="safari trek logo" />
         <h2 className="header">Please sign in to your account</h2>
         <LoginForm />
-        <div className="link-cus flex gap-3 justify-center">
+        <div className="flex gap-3 justify-center">
           Don&apos;t have an account?
           <Link to="signup" className="link-cus-title">
             Sign up

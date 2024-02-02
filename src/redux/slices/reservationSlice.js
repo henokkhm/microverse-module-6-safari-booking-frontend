@@ -14,8 +14,6 @@ export const getReservations = createAsyncThunk(
       const headers = getHeaders();
       const response = await axios.get(`${BaseUrl}reservations`, headers);
       dispatch(loaded());
-      console.log('fetched reservations');
-      console.log({ reservations: response.data });
       return response.data;
     } catch (error) {
       showError();

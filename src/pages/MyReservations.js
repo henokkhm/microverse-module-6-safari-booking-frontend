@@ -19,7 +19,6 @@ const MyReservations = () => {
   const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
-    console.log('fetching reservations');
     dispatch(getReservations());
   }, [dispatch]);
 

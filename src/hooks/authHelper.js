@@ -24,6 +24,8 @@ export const useSignOut = () => {
       })
       .then(() => {
         localStorage.removeItem('token');
+        localStorage.removeItem('user_id');
+        localStorage.removeItem('role');
       })
       .then(() => {
         navigate('/');

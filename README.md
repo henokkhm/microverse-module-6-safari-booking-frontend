@@ -2,32 +2,37 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-    - [🚀 Live Demo](#live-demo)
-     - [🔗 Link for the Backend ](#-link-for-the-backend-)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#Deployment)
-- [👥 Author](#author)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖Safari-Booking ](#safari-booking-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [To track linter errors locally follow these steps:](#to-track-linter-errors-locally-follow-these-steps)
+    - [Deployment](#deployment)
+  - [👥 Author ](#-author-)
+  - [👥 Kanban Board ](#-kanban-board-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
 # 📖Safari-Booking <a name="about-project"></a>
 
-> In this project, I build a booking safari App using HTML, CSS, JavaScript, React.
+<div style="text-align:center;">
+  <img src="src/assets/logo.png" alt="Safari Trek Logo" />
+</div>
+
+In this project, we built a safari booking App using HTML, CSS, JavaScript, React.
 
 ## 🛠 Built With <a name="built-with">
 - HTML
@@ -157,6 +162,15 @@ GitHub pages
 - GitHub: [@HenaryKhuraijam](https://github.com/HenaryKhuraijam)
 - Twitter: [@HenaryKhuraijam](https://twitter.com/HenaryKhuraijam)
 - LinkedIn: [Henary Khuraijam](https://www.linkedin.com/in/henary-khuraijam-50487317a)
+
+<!-- KANBAN BOARD -->
+## 👥 Kanban Board <a name="kanban-board"></a>
+
+The final number of team members is five. Here is the screenshot of the initial state of our Kanban board.
+
+<div style="text-align:center;">
+  <img src="src/assets/kanbanboard.png" alt="Kanban Board" />
+</div>
 
 
 <!-- FUTURE FEATURES -->

@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import SafariDetails from '../pages/SafariDetails';
 import MakeReservation from '../pages/MakeReservation';
 import MyReservations from '../pages/MyReservations';
+import RegisterAdmin from '../pages/RegisterAdmin';
 import AddSafari from '../pages/AddSafari';
 import DeleteSafaris from '../pages/DeleteSafaris';
 
@@ -19,6 +20,7 @@ function MyRoutes() {
         <Route path="safari/:id" element={<SafariDetails />} />
         <Route path="make-reservation/:id?" element={<MakeReservation />} />
         <Route path="my-reservations" element={<MyReservations />} />
+        <Route path="register-admin" element={<RegisterAdmin />} />
         <Route path="add-safari" element={<AddSafari />} />
         <Route path="delete-safari" element={<DeleteSafaris />} />
         {/* <Route path="register-an-admin" element={<AdminRegistration />} /> */}

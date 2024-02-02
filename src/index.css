@@ -84,6 +84,10 @@
     align-items: center !important;
   }
 
+  [type=checkbox] {
+    background-color: #7d9f0f !important;
+  }
+
 
   /* *, ::before, ::after {
     outline: 1px solid red;

@@ -1,13 +1,16 @@
 import axios from 'axios';
+import PropTypes from 'prop-types';
+
 import { useNavigate } from 'react-router-dom';
 import BaseUrl from '../api/api_helper';
 import NovaFormInput from './shared/NovaFormInput ';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ isAdmin }) => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const registrationData = new FormData(e.target);
+    // TODO: use separate endpoint to create Admin users
     await axios
       .post(`${BaseUrl}/api/auth/signup`, registrationData)
       .then((response) => {
@@ -60,11 +63,31 @@ const RegistrationForm = () => {
         cPlaceholder="Phone Number"
         isRequired
       />
-      <button type="submit" className="btn-primary">
-        Sign Up
-      </button>
+      {isAdmin && (
+        <label htmlFor="is-admin" className="flex gap-2 text-xl items-center text-gray-400">
+          <input id="is-admin" type="checkbox" name="isAdmin" checked disabled className="bg-st-green-400" />
+          <span>Is admin</span>
+        </label>
+      )}
+      {isAdmin ? (
+        <button type="submit" className="btn-primary w-64">
+          Add Admin
+        </button>
+      ) : (
+        <button type="submit" className="btn-primary">
+          Sign Up
+        </button>
+      )}
     </form>
   );
+};
+
+RegistrationForm.propTypes = {
+  isAdmin: PropTypes.bool,
+};
+
+RegistrationForm.defaultProps = {
+  isAdmin: false,
 };
 
 export default RegistrationForm;

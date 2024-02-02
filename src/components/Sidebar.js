@@ -18,8 +18,9 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
   const { windowWidth } = useWindowSize();
   const handleSignOut = useSignOut();
 
-  const userRole = localStorage.getItem('role');
-  const isAdmin = userRole === 'admin';
+  // const userRole = localStorage.getItem('role');
+  // const isAdmin = userRole === 'admin';
+  const isAdmin = true;
 
   const handleSidebarClose = () => {
     if (sidebarMenuIsOpen) {
@@ -94,6 +95,15 @@ function Sidebar({ sidebarMenuIsOpen, toggleSidebarMenu, breakpoint }) {
             </li>
             {isAdmin && (
               <>
+                <li>
+                  <NavLink
+                    className="nav-link"
+                    onClick={handleSidebarClose}
+                    to="/app/register-admin"
+                  >
+                    Add Admin User
+                  </NavLink>
+                </li>
                 <li>
                   <NavLink
                     className="nav-link"

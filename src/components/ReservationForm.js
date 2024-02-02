@@ -57,6 +57,7 @@ const ReservationForm = ({ safariId }) => {
             id="safari-dropdown"
             className="p-4"
             onChange={handleSafariSelect}
+            defaultValue={safariId}
           >
             {safaris.map((safari) => (
               <option className="my-2" key={safari.id} value={safari.id}>
@@ -68,7 +69,13 @@ const ReservationForm = ({ safariId }) => {
       </div>
       <label htmlFor="date">
         <p className="pb-4">Please select your desired date:</p>
-        <input className="p-4" type="date" id="date" placeholder="Select date" required />
+        <input
+          className="p-4"
+          type="date"
+          id="date"
+          placeholder="Select date"
+          required
+        />
       </label>
       <NovaFormInput
         cType="number"
@@ -95,7 +102,11 @@ const ReservationForm = ({ safariId }) => {
 };
 
 ReservationForm.propTypes = {
-  safariId: PropTypes.string.isRequired,
+  safariId: PropTypes.string,
+};
+
+ReservationForm.defaultProps = {
+  safariId: 0,
 };
 
 export default ReservationForm;

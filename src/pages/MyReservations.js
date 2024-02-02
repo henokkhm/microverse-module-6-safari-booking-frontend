@@ -20,29 +20,31 @@ const MyReservations = () => {
     <ProtectedRoute>
       <main className="page-container">
         <div className="flex flex-col gap-8 h-screen w-full md:w-11/12 mx-auto ">
-          <h1 className="header">
-            My Reservations
-          </h1>
-          <div className="">
-            {loading && (
-              <p className="text-gray-500 text-2xl">Loading...</p>
-            )}
+          <h1 className="header">My Reservations</h1>
+          <div className="border-b-4 mb-6 border-dotted border-gray-200 w-32" />
+          <div className="flex flex-col gap-8">
+            {loading && <p className="text-gray-500 text-2xl">Loading...</p>}
             {reservations.length === 0 ? (
               <p className="">
                 You have not booked any safaris. Please make a reservation
                 {' '}
-                <NavLink
-                  className=""
-                  to="/app/make-reservation"
-                >
+                <NavLink className="" to="/app/make-reservation">
                   here
                 </NavLink>
                 .
               </p>
             ) : (
-              reservations.map((reservation) => (
-                <MyReservation key={reservation.id} reservation={reservation} />
-              ))
+              <>
+                <p className="mb-6">
+                  You have curerntly booked the following reservations:
+                </p>
+                {reservations.map((reservation) => (
+                  <MyReservation
+                    key={reservation.id}
+                    reservation={reservation}
+                  />
+                ))}
+              </>
             )}
           </div>
         </div>

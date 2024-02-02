@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* stylelint-disable  -- @layer*/
+@layer base {
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+      @apply placeholder-transparent w-full px-5 pb-3 pt-7 text-xl border-gray-300 rounded-lg shadow-sm focus:border-lime-200 focus:ring-lime-200;
+    }
+  
+    [type='checkbox'],
+    [type='radio'],
+    select {
+      @apply rounded;
+    }
+  }
+  
+  @layer components {
+    .float__lbl {
+      @apply absolute px-1 top-[6px] z-10 text-base left-2 text-gray-400
+        transition-all
+        peer-placeholder-shown:text-gray-500
+      peer-placeholder-shown:bg-transparent
+      peer-placeholder-shown:top-[20px]
+      peer-focus:top-[6px]
+      peer-focus:text-lime-700
+    }
+
+    .page-container {
+      @apply min-h-screen min-w-[530px] flex flex-col gap-24 bg-st-green-50 md:bg-white
+    }
+
+    .header {
+      @apply text-3xl text-left font-bold pt-16
+    }
+
+    .form {
+      @apply grid items-center space-y-7 w-full max-w-[640px]
+    }
+  
+    .btn-primary {
+      @apply opacity-90 w-full py-2 text-xl font-bold text-white transition-colors duration-200 transform bg-st-green-400 rounded-md hover:bg-st-green-500 focus:outline-lime-500
+    }
+
+    .link-cus-title {
+      @apply text-st-green-600 ml-1 hover:underline hover:border-lime-200
+      hover:ring-lime-200 focus:border-lime-200 outline-none
+    }
+  
+    .link-cus {
+      @apply tracking-wide font-normal text-center text-st-green-600 hover:underline
+    }
+
+    .social-icon {
+      @apply hover:scale-105 duration-150
+    }
+
+    .nav-link {
+      @apply uppercase p-3 font-bold text-lg hover:bg-st-green-100 w-full inline-block
+    }
+
+    .nav-link.active {
+      @apply bg-st-green-400
+    }
+
+    .error-msg {
+      @apply mt-4 p-2 rounded-sm text-red-600
+    }
+
+  }
+
+  .slick-slider {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  [type=checkbox] {
+    background-color: #7d9f0f !important;
+  }
+
+
+  /* *, ::before, ::after {
+    outline: 1px solid red;
+  }
+   */

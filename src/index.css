@@ -78,7 +78,7 @@
     }
 
     .error-msg {
-      @apply mt-4 p-2 rounded-sm bg-red-200 text-red-600
+      @apply mt-4 p-2 rounded-sm text-red-600
     }
 
   }

@@ -18,12 +18,14 @@ const RegistrationForm = ({ isAdmin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const registrationData = {
-      firstName,
-      lastName,
-      email,
-      phone,
-      username,
-      password,
+      user: {
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        phone_no: phone,
+        username,
+        password,
+      },
     };
 
     if (isAdmin) {
@@ -40,7 +42,7 @@ const RegistrationForm = ({ isAdmin }) => {
         const token = response.headers.authorization;
         if (token && token !== '') {
           localStorage.setItem('token', token);
-          navigate('app/safaris');
+          navigate('/app/safaris');
         }
       })
       .catch((err) => {

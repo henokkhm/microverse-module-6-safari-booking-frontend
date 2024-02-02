@@ -97,6 +97,7 @@ const ReservationForm = ({ safariId }) => {
       <button type="submit" className="btn-primary w-72">
         Make Reservation
       </button>
+      <div className="error-msg" id="msg" />
     </form>
   );
 };

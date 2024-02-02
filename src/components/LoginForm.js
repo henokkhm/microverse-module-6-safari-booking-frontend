@@ -46,6 +46,7 @@ const LoginForm = () => {
       <button type="submit" className="btn-primary">
         Login
       </button>
+      <div className="error-msg" id="msg" />
     </form>
   );
 };

@@ -78,6 +78,7 @@ const RegistrationForm = ({ isAdmin }) => {
           Sign Up
         </button>
       )}
+      <div className="error-msg" id="msg" />
     </form>
   );
 };

@@ -62,7 +62,7 @@
     }
   
     .link-cus {
-      @apply tracking-wide font-normal text-center text-blue-900
+      @apply tracking-wide font-normal text-center text-st-green-600 hover:underline
     }
 
     .social-icon {
@@ -75,6 +75,10 @@
 
     .nav-link.active {
       @apply bg-st-green-400
+    }
+
+    .error-msg {
+      @apply mt-4 p-2 rounded-sm bg-red-200 text-red-600
     }
 
   }

@@ -8,13 +8,16 @@ import BaseUrl from '../api/api_helper';
 import NovaFormInput from './shared/NovaFormInput ';
 
 const ReservationForm = ({ safariId }) => {
+  const [date, setDate] = useState('');
+  const [numberofPersons, setNumberofPersons] = useState(0);
+
   const safaris = useSelector((store) => store.safaris);
 
   const [selectedSafari, setSelectedSafari] = useState(() => {
     if (safariId) {
       return safaris.find((safari) => safari.id === safariId);
     }
-    return null;
+    return safaris[0];
   });
 
   const navigate = useNavigate();
@@ -30,15 +33,25 @@ const ReservationForm = ({ safariId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const reservationData = new FormData(e.target);
-    reservationData.append('user_id', userId);
-    reservationData.append('totalAmount', selectedSafari.price);
+    const reservationData = {
+      reservation: {
+        user_id: userId,
+        safari_id: selectedSafari?.id,
+        bookingDate: date,
+        numberofPersons,
+        totalAmount: selectedSafari.price,
+      },
+    };
     // TODO: add the following required items to formdata
     // :user_id, :safari_id, :bookingDate, :numberofPersons, :totalAmount
+    const token = localStorage.getItem('token');
+
     await axios
-      .post(`${BaseUrl}reservations`, reservationData)
+      .post(`${BaseUrl}reservations`, reservationData, {
+        headers: { 'Content-Type': 'application/json', Authorization: token },
+      })
       .then(() => {
-        navigate('app/safaris');
+        navigate('/app/safaris');
       })
       .catch((err) => {
         document.getElementById('msg').textContent = `${
@@ -75,12 +88,16 @@ const ReservationForm = ({ safariId }) => {
           id="date"
           placeholder="Select date"
           required
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
         />
       </label>
       <NovaFormInput
         cType="number"
         cId="numberofPersons"
         cPlaceholder="Enter number of persons"
+        value={date}
+        onChange={(e) => setNumberofPersons(parseInt(e.target.value, 10))}
         isRequired
       />
       {selectedSafari?.price && (
@@ -89,7 +106,7 @@ const ReservationForm = ({ safariId }) => {
             The price for selected safari is:
           </span>
           <span className="text-st-green-600 font-bold">
-            $
+            <span>$</span>
             {selectedSafari.price}
           </span>
         </div>
@@ -103,7 +120,7 @@ const ReservationForm = ({ safariId }) => {
 };
 
 ReservationForm.propTypes = {
-  safariId: PropTypes.string,
+  safariId: PropTypes.number,
 };
 
 ReservationForm.defaultProps = {

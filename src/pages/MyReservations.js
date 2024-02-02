@@ -8,7 +8,14 @@ import ProtectedRoute from '../components/ProtectedRoute';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
-  const reservations = useSelector((state) => state.reservations);
+  const safaris = useSelector((store) => store.safaris);
+
+  const reservations = useSelector((state) => state.reservations).map(
+    (reservation) => ({
+      ...reservation,
+      safari: safaris.find((safari) => safari.id === reservation.safari_id),
+    }),
+  );
   const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
